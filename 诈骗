@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反诈演示-菜鸟理赔仿页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui;
+        }
+        .top-tips{
+            background:#f00;color:#fff;text-align:center;padding:12px;font-weight:bold;
+        }
+        .wrap{
+            max-width:420px;margin:30px auto;padding:20px;
+        }
+        .title{
+            text-align:center;font-size:20px;margin:15px 0;
+        }
+        .desc{
+            background:#fff8dc;padding:12px;border-radius:6px;margin-bottom:20px;font-size:14px;
+        }
+        .item{margin-bottom:16px;}
+        .item label{display:block;margin-bottom:6px;font-size:14px;}
+        .item input{
+            width:100%;padding:12px;border:1px #ddd solid;border-radius:5px;font-size:16px;
+        }
+        button{
+            width:100%;padding:14px;background:#ff7800;color:#fff;border:none;border-radius:5px;font-size:17px;
+        }
+        .foot-tips{
+            margin-top:30px;color:red;text-align:center;font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+<div class="top-tips">⚠️ 本页面仅反诈视频拍摄演示，非官方网站，切勿轻信陌生理赔链接</div>
+<div class="wrap">
+    <div class="title">包裹丢失138元理赔申领</div>
+    <div class="desc">系统检测您包裹遗失，可申领138元补偿，填写资料即可打款到银行卡</div>
+    <div class="item">
+        <label>持卡人姓名</label>
+        <input type="text" id="name" placeholder="填写真实姓名">
+    </div>
+    <div class="item">
+        <label>银行卡号码</label>
+        <input type="text" id="card" placeholder="银行卡卡号">
+    </div>
+    <div class="item">
+        <label>预留手机号</label>
+        <input type="text" id="phone" placeholder="银行预留手机号">
+    </div>
+    <div class="item">
+        <label>短信验证码</label>
+        <input type="text" id="code" placeholder="短信6位验证码">
+    </div>
+    <button onclick="tip()">提交理赔</button>
+    <div class="foot-tips">凡是索要银行卡、验证码的全是电信诈骗！</div>
+</div>
+<script>
+// 关键：仅弹窗提示，所有填写内容不会保存、不会上传、不会发送到任何后台
+function tip(){
+    alert('【反诈提醒】切勿填写银行卡和验证码！该链接为诈骗链接，填写信息会被盗刷银行卡！');
+}
+</script>
+</body>
+</html>
