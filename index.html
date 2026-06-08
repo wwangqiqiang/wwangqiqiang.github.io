@@ -1,89 +1,66 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>反诈演示页面</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: system-ui;
-        }
-        .top-tips{
-            background:#f00;color:#fff;text-align:center;padding:12px;font-weight:bold;
-        }
-        .wrap{
-            max-width:420px;margin:30px auto;padding:20px;
-        }
-        .title{
-            text-align:center;font-size:20px;margin:15px 0;
-        }
-        .desc{
-            background:#fff8dc;padding:12px;border-radius:6px;margin-bottom:20px;font-size:14px;
-        }
-        .item{margin-bottom:16px;}
-        .item label{display:block;margin-bottom:6px;font-size:14px;}
-        .item input{
-            width:100%;padding:12px;border:1px #ddd solid;border-radius:5px;font-size:16px;
-        }
-        .code-row{display:flex;gap:8px;}
-        .code-row input{flex:1;}
-        .getcode{
-            white-space:nowrap;padding:0 10px;border:none;background:#007aff;color:#fff;border-radius:5px;
-        }
-        button{
-            width:100%;padding:14px;background:#ff7800;color:#fff;border:none;border-radius:5px;font-size:17px;margin-top:8px;
-        }
-        .foot-tips{
-            margin-top:30px;color:red;text-align:center;font-weight:bold;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>案例演示页面</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.box{
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    width:320px;
+    box-shadow:0 0 20px rgba(0,0,0,.1);
+}
+input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+}
+button{
+    width:100%;
+    padding:10px;
+    background:#1677ff;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+}
+.watermark{
+    margin-top:15px;
+    color:#c00;
+    text-align:center;
+    font-weight:bold;
+}
+</style>
 </head>
 <body>
-<div class="top-tips">⚠️ 本页面仅反诈视频拍摄演示，非官方网站，切勿用来骗人</div>
-<div class="wrap">
-    <div class="title">包裹丢失138元理赔申领</div>
-    <div class="desc">系统检测您包裹遗失，可申领138元补偿，填写资料即可打款到银行卡</div>
-    <div class="item">
-        <label>持卡人姓名</label>
-        <input type="text" id="name" placeholder="填写真实姓名">
+
+<div class="box">
+    <h2>账号验证（案例演示）</h2>
+
+    <input id="user" placeholder="输入账号">
+    <input id="pass" type="password" placeholder="输入密码">
+
+    <button onclick="demo()">确认</button>
+
+    <div class="watermark">
+        本页面仅用于反诈宣传视频拍摄
     </div>
-    <div class="item">
-        <label>银行卡号码</label>
-        <input type="text" id="card" placeholder="银行卡卡号">
-    </div>
-    <div class="item">
-        <label>预留手机号</label>
-        <input type="text" id="phone" placeholder="银行预留手机号">
-    </div>
-    <div class="item">
-        <label>短信验证码</label>
-        <div class="code-row">
-            <input type="text" id="code" placeholder="输入6位验证码">
-            <button class="getcode" onclick="createCode()">获取验证码</button>
-        </div>
-    </div>
-    <button onclick="submitBtn()">提交理赔</button>
-    <div class="foot-tips">凡是索要银行卡、验证码的全是电信诈骗！</div>
 </div>
+
 <script>
-let trueCode = "";
-// 生成6位随机假验证码，仅页面生效，不会发短信
-function createCode(){
-    trueCode = String(Math.floor(100000 + Math.random()*900000));
-    alert("【演示】模拟下发验证码："+trueCode+"\n⚠️实际骗子不会真发正规验证码");
-}
-// 提交只弹窗反诈，数据全部本地不保存不上传
-function submitBtn(){
-    let inputCode = document.getElementById("code").value;
-    if(inputCode === trueCode && trueCode!=""){
-        alert('【反诈警示】填写完银行卡+验证码后，你的卡资金就会被盗刷！此为诈骗套路！');
-    }else{
-        alert('验证码错误（演示效果）');
-    }
+function demo(){
+    alert("演示模式：未提交任何数据");
 }
 </script>
+
 </body>
 </html>
